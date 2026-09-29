@@ -1,0 +1,4 @@
+# Telemetria lasciata da un plugin, non fa parte del progetto.
+.claude-flow/
+node_modules/
+dist/
