@@ -1,0 +1,18 @@
+{
+  "_leggimi": "Dati delle pagine legali: nel testo compaiono come {{chiave}}. Un valore vuoto esce nella pagina come [da completare] e la build lo segnala. Cambiare versione quando i testi cambiano in modo sostanziale (e Legale.versione / Legale.VERSIONE nelle app, che chiedono di nuovo l'accettazione).",
+  "versione": "19 ottobre 2026",
+  "societa": "",
+  "sede": "",
+  "piva": "",
+  "rea": "",
+  "capitale": "",
+  "pec": "",
+  "emailPrivacy": "",
+  "emailInfo": "",
+  "emailSegnalazioni": "",
+  "regioneSupabase": "",
+  "nutrizionista": "",
+  "nutrizionistaAlbo": "",
+  "giorniLogServer": "",
+  "foro": ""
+}

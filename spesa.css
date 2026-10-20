@@ -1,0 +1,162 @@
+/* La pagina di chi fa la spesa (/): sopra comune.css. */
+
+/* Un solo bottone per dispositivo: iPhone vede l'App Store, Android Google Play, il computer
+   tutti e due (.anche-desktop). Senza JavaScript data-dispositivo manca e si vede tutto. */
+[data-dispositivo='ios'] .solo-android,
+[data-dispositivo='ios'] .solo-desktop,
+[data-dispositivo='android'] .solo-ios,
+[data-dispositivo='android'] .solo-desktop,
+[data-dispositivo='desktop'] .solo-ios:not(.anche-desktop),
+[data-dispositivo='desktop'] .solo-android:not(.anche-desktop) { display: none !important; }
+[data-senza-appstore] .solo-ios { display: none !important; }
+.presto { display: none; font-size: 15px; color: var(--inchiostro-tenue); }
+[data-dispositivo='ios'][data-senza-appstore] .presto { display: block; }
+
+
+/* ---------- La scena 3D dell'apertura ---------- */
+/* La scena: il telefono con la schermata vera dell'app e, intorno, i materiali dell'app in
+   rilievo. Tutto CSS (perspective + translateZ), niente WebGL. --p arriva dallo scroll: la scena
+   ruota e i pezzi si staccano dal telefono; --mx/--my dal puntatore. */
+.scena {
+  --p: 0; --mx: 0; --my: 0;
+  position: relative; height: 600px;
+  perspective: 1400px;
+}
+.mondo {
+  position: absolute; inset: 0;
+  transform-style: preserve-3d;
+  transform:
+    rotateX(calc(8deg - var(--my) * 14deg + var(--p) * 14deg))
+    rotateY(calc(-18deg + var(--mx) * 22deg + var(--p) * 40deg));
+  transition: transform .25s ease-out;
+}
+.scena .pezzo {
+  --dx: 0px; --dy: 0px; --z: 0px; --rz: 0deg;
+  position: absolute; transform-style: preserve-3d;
+  transform:
+    translate3d(calc(var(--dx) * var(--p)), calc(var(--dy) * var(--p)), calc(var(--z) + var(--p) * 160px))
+    rotateZ(var(--rz));
+}
+
+.telefono {
+  left: 50%; top: 50%; width: 270px; height: 568px; margin: -284px 0 0 -135px;
+  border-radius: 46px; padding: 10px;
+  background: linear-gradient(145deg, #4a443c, #1d1a17 60%);
+  box-shadow: inset 0 0 0 2px #6d665b, 30px 40px 60px var(--ombra);
+}
+.scena .telefono { transform: scale(calc(1 - var(--p) * .12)); }
+.schermo { position: relative; height: 100%; border-radius: 37px; overflow: hidden; background: #fffbf6; }
+.schermo img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.schermo::after { /* isola */
+  content: ''; position: absolute; top: 9px; left: 50%; width: 76px; height: 22px; margin-left: -38px;
+  background: #0d0c0b; border-radius: 20px;
+}
+
+
+/* ---------- Materiali: quaderno, polaroid, calendario ---------- */
+.quaderno {
+  --riga: 30px;
+  position: relative;
+  background:
+    linear-gradient(90deg, transparent 47px, var(--marchio-terracotta) 47px 49px, transparent 49px),
+    repeating-linear-gradient(to bottom, var(--carta) 0 calc(var(--riga) - 1px), color-mix(in srgb, var(--salvia) 28%, transparent) calc(var(--riga) - 1px) var(--riga));
+  background-color: var(--carta);
+  padding: 14px 20px 18px 64px;
+  line-height: var(--riga);
+  font-size: 18px; font-weight: 600; color: var(--inchiostro);
+}
+.quaderno::before { /* fori degli anelli: il colore della pagina, cioè buchi veri */
+  content: ''; position: absolute; left: 12px; top: 0; bottom: 0; width: 14px;
+  background: radial-gradient(circle at 7px 15px, var(--sfondo) 5.5px, transparent 6px) 0 0 / 14px 30px repeat-y;
+}
+.quaderno .chi { display: block; font-size: 13px; font-weight: 800; color: var(--salvia); }
+.quaderno .scritta { display: block; }
+
+.polaroid {
+  position: relative; background: var(--carta); margin: 0;
+  padding: 10px 10px 0; border-radius: 3px;
+  box-shadow: 0 6px 14px var(--ombra);
+}
+.polaroid .foto { aspect-ratio: 1; display: grid; place-items: center; font-size: 64px; border-radius: 1px; }
+.polaroid figcaption { font-size: 15px; font-weight: 700; padding: 8px 2px 12px; text-align: center; }
+.polaroid::before { /* il nastro */
+  content: ''; position: absolute; top: -9px; left: 50%; width: 66px; height: 18px; margin-left: -33px;
+  background: color-mix(in srgb, var(--salvia) 38%, transparent); transform: rotate(-4deg);
+}
+
+/* Il foglio di calendario dell'app: anelli sopra, mese terracotta, giorno grande */
+.calendarino { width: 96px; background: var(--carta); text-align: center; border-radius: 10px 10px 2px 2px; box-shadow: 0 8px 16px var(--ombra); }
+.calendarino .mese { position: relative; background: var(--marchio-terracotta); color: #fffbf6; font-weight: 800; font-size: 13px; padding: 6px 0 5px; border-radius: 10px 10px 0 0; }
+.calendarino .mese::before, .calendarino .mese::after {
+  content: ''; position: absolute; top: -7px; width: 6px; height: 13px; border-radius: 3px; background: #6d665b;
+}
+.calendarino .mese::before { left: 24px; }
+.calendarino .mese::after { right: 24px; }
+.calendarino .giorno { font-weight: 800; font-size: 44px; line-height: 1.05; padding: 4px 0 0; }
+.calendarino .dow { font-size: 12px; color: var(--inchiostro-tenue); font-weight: 700; padding-bottom: 10px; }
+
+/* Posizioni nella scena: --dx/--dy dove vanno quando la scena si apre con lo scroll */
+.scena .scontrino-3d { width: 210px; right: -4%; top: 16%; --z: 120px; --rz: 4deg; --dx: 90px; --dy: -30px; }
+.scena .polaroid-3d { width: 150px; left: 0; top: 7%; --z: 60px; --rz: -7deg; --dx: -90px; --dy: -50px; }
+.scena .quaderno-3d { width: 250px; left: -3%; bottom: 4%; --z: 90px; --rz: -3deg; --dx: -100px; --dy: 60px; font-size: 16px; }
+.scena .calendario-3d { right: 6%; bottom: 8%; --z: 170px; --rz: 6deg; --dx: 80px; --dy: 70px; }
+
+/* All'apertura lo scontrino esce stampato, dall'alto in giù. */
+.scena .scontrino-3d .scontrino { animation: stampaCarta 1.4s .4s cubic-bezier(.3,.6,.2,1) backwards; }
+@keyframes stampaCarta { from { clip-path: inset(0 0 100% 0); translate: 0 -30px; } to { clip-path: inset(0 0 0 0); translate: 0 0; } }
+
+@media (max-width: 900px) {
+  .scena { height: 540px; max-width: 520px; margin: 0 auto; width: 100%; }
+  .scena .telefono { transform: scale(calc(.88 - var(--p) * .1)); }
+  .scena .scontrino-3d { width: 180px; right: -2%; }
+  .scena .polaroid-3d { width: 120px; left: 2%; }
+  .scena .quaderno-3d { width: 210px; left: 0; }
+}
+@media (max-width: 520px) {
+  .scena { height: 490px; }
+  .scena .telefono { transform: scale(calc(.78 - var(--p) * .08)); }
+  .scena .scontrino-3d { width: 150px; right: -4%; top: 20%; --dx: 40px; }
+  .scena .scontrino-3d .scontrino { font-size: 11px; padding-inline: 12px; }
+  .scena .polaroid-3d { width: 100px; left: -4%; --dx: -40px; }
+  .scena .polaroid-3d .foto { font-size: 44px; }
+  .scena .polaroid-3d figcaption { font-size: 12px; }
+  .scena .quaderno-3d { width: 180px; left: -4%; bottom: 2%; font-size: 14px; --dx: -40px; }
+  .scena .calendario-3d { right: -2%; bottom: 4%; --dx: 40px; }
+}
+
+/* In chiusura lo slogan è il titolo: il corsivo ha l'occhio piccolo, va più grande */
+.chiusura .firma { font-size: clamp(54px, 8vw, 100px); }
+
+/* Come funziona: i carrelli e l'avvertenza accanto allo scontrino */
+.carrelli { margin-top: 32px; }
+.carrelli ul { list-style: none; margin: 6px 0 0; padding: 0; display: flex; flex-wrap: wrap; font-weight: 700; font-size: 20px; }
+.carrelli li:not(:last-child)::after { content: '·'; margin-inline: 10px; color: var(--marchio-terracotta); }
+.avvertenza { margin-top: 24px; font-size: 15px; color: var(--inchiostro-tenue); max-width: 34em; }
+
+/* Ricette e community: bacheca di polaroid e un foglio di domande */
+.ricette { background: var(--superficie); overflow-x: clip; }
+.bacheca { margin-top: 48px; display: grid; grid-template-columns: repeat(3, minmax(0, 220px)) minmax(0, 1fr); gap: 28px; align-items: start; }
+.bacheca .polaroid:nth-child(1) { transform: rotate(-3deg); }
+.bacheca .polaroid:nth-child(2) { transform: rotate(2deg) translateY(18px); }
+.bacheca .polaroid:nth-child(3) { transform: rotate(-1.5deg); }
+.bacheca .quaderno { margin-left: 12px; }
+@media (max-width: 980px) {
+  .bacheca { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .bacheca .quaderno { grid-column: 1 / -1; margin: 12px 0 0; }
+}
+@media (max-width: 560px) {
+  .bacheca { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .bacheca .polaroid:nth-child(3) { display: none; }
+  .polaroid .foto { font-size: 52px; }
+}
+
+/* ---------- Comparse proprie di questa pagina ---------- */
+/* Polaroid: cadono sulla bacheca */
+.anima .bacheca .polaroid.rivela-i { opacity: 0; translate: 0 -90px; rotate: -14deg; }
+.anima .bacheca.visto .polaroid.rivela-i { opacity: 1; translate: 0 0; rotate: 0deg; }
+/* Quaderno: le righe si scrivono da sinistra */
+.anima .bacheca .scritta.rivela-i { --ritardo: 450ms; clip-path: inset(0 100% 0 0); }
+.anima .bacheca.visto .scritta.rivela-i { clip-path: inset(0 0 0 0); }
+/* Carrelli: le parole compaiono una dopo l'altra */
+.anima .carrelli .rivela-i { opacity: 0; translate: 0 6px; }
+.anima .carrelli.visto .rivela-i { opacity: 1; translate: 0 0; }

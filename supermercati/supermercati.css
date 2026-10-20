@@ -1,0 +1,63 @@
+/* La pagina dei supermercati (/supermercati/): sopra comune.css. */
+
+/* Accanto al logotipo, di chi è questa pagina */
+.marchio .area { font-size: 12px; font-weight: 700; letter-spacing: .14em; color: var(--salvia); padding-left: 10px; border-left: 1.5px solid var(--filetto); }
+@media (max-width: 480px) { .marchio .area { display: none; } }
+
+/* ---------- Apertura su fondo salvia pieno, con il palmare ---------- */
+.scura { background: #3f4a35; color: #f3eadb; }
+.scura :focus-visible { outline-color: #f3eadb; }
+.scura a.bottone { --terracotta: #e48f7b; --su-pieno: #1b1916; }
+.apertura.scura { padding: 64px 0 72px; }
+.apertura.scura h1 { color: #f3eadb; }
+.apertura.scura .sotto { color: #d8d0c2; }
+.occhiello { margin-bottom: 18px; font-size: 13px; font-weight: 700; letter-spacing: .16em; color: #c3cfae; }
+.nota { margin-top: 20px; font-size: 15px; color: #d8d0c2; max-width: 30em; }
+@media (max-width: 900px) { .nota { margin-inline: auto; } }
+
+/* Il palmare con l'app Ordini: si raddrizza mentre passa sullo schermo (--p dallo scroll) */
+.palmare-scena { --p: .5; perspective: 1200px; display: grid; place-items: center; min-height: 460px; }
+.palmare {
+  width: 250px; border-radius: 30px; padding: 14px 12px 40px;
+  background: linear-gradient(160deg, #3a3631, #16140f);
+  box-shadow: inset 0 0 0 2px #5e574d, 30px 40px 60px rgba(0,0,0,.45);
+  transform:
+    rotateX(calc(26deg - var(--p) * 32deg))
+    rotateY(calc(52deg - var(--p) * 72deg))
+    rotateZ(calc(-8deg + var(--p) * 10deg));
+  transition: transform .2s ease-out;
+}
+.palmare .laser { height: 10px; width: 60px; margin: 0 auto 10px; border-radius: 5px; background: #a82a3a; box-shadow: 0 0 12px #ef6f86; }
+.palmare .display { background: #fffbf6; color: #2e2a24; border-radius: 14px; padding: 14px 12px; font-size: 12px; }
+.palmare .display h3 { font-size: 15px; color: #5b6a4d; margin-bottom: 8px; }
+.ordine { display: flex; justify-content: space-between; align-items: center; padding: 8px 10px; margin-top: 6px; border-radius: 10px; background: #f3eadb; font-weight: 700; }
+.ordine small { font-family: var(--stampa); color: #675e53; font-weight: 400; }
+.ordine .stato { font-size: 10px; padding: 3px 8px; border-radius: 999px; background: #5b6a4d; color: #fffbf6; }
+.ordine .stato.pronto { background: #a9503d; }
+.palmare .tasti { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 16px; }
+.palmare .tasti span { height: 22px; border-radius: 8px; background: #4a453e; box-shadow: inset 0 -2px 0 #2a2622; }
+.palmare .tasti span:nth-child(2) { background: #a9503d; box-shadow: inset 0 -2px 0 #6f2f22; }
+.palmare-scena .didascalia { font-size: 15px; font-weight: 600; color: #d8d0c2; margin-top: 26px; }
+@media (max-width: 900px) { .palmare-scena { min-height: 400px; } }
+
+/* Come si parte: accanto allo scontrino, cosa serve per registrarsi */
+.serve { margin-top: 32px; }
+.serve ul { margin: 10px 0 0; padding: 0; list-style: none; display: grid; gap: 8px; font-size: 17px; }
+.serve li { display: flex; gap: 12px; align-items: baseline; }
+.serve li::before { content: ''; flex: none; width: 7px; height: 7px; border-radius: 50%; background: var(--marchio-terracotta); translate: 0 -2px; }
+
+/* ---------- Funzioni del pannello: schede crema, solo da leggere ---------- */
+.funzioni-sezione { background: var(--superficie); }
+.funzioni { margin: 48px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.funzioni li { padding: 24px; border-radius: 24px; background: var(--sfondo); }
+.funzioni .icona { width: 44px; height: 44px; margin-bottom: 14px; border-radius: 50%; display: grid; place-items: center; background: color-mix(in srgb, var(--salvia) 14%, transparent); color: var(--salvia); }
+.funzioni .icona svg { width: 22px; height: 22px; }
+.funzioni b { display: block; font-size: 19px; line-height: 1.25; }
+.funzioni p { margin-top: 6px; color: var(--inchiostro-tenue); font-size: 16px; }
+@media (max-width: 900px) { .funzioni { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .funzioni { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---------- Comparse proprie di questa pagina ---------- */
+/* Funzioni: le schede salgono una dopo l'altra */
+.anima .funzioni .rivela-i { opacity: 0; translate: 0 18px; }
+.anima .funzioni.visto .rivela-i { opacity: 1; translate: 0 0; }

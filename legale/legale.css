@@ -1,0 +1,46 @@
+/* Le pagine legali (/legale/): testo lungo da leggere, una colonna sola, sopra comune.css. */
+
+.documento { padding: 40px 0 72px; }
+.documento .contenitore { width: min(760px, 100% - 32px); }
+/* Le sezioni qui sono capitoli, non le fasce della landing: niente padding di comune.css */
+.documento section { padding: 0; }
+
+/* Gli altri documenti, in cima: dove sono e dove andare. Più specifico delle liste del testo. */
+.documento .documenti { margin: 0 0 28px; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.documento .documenti li { margin: 0; font-size: 15px; line-height: 1.4; }
+.documenti a { color: var(--inchiostro-tenue); }
+.documenti a[aria-current='page'] { color: var(--terracotta); font-weight: 700; text-decoration: none; }
+
+.documento h1 { font-size: clamp(36px, 5.4vw, 54px); color: var(--salvia); }
+.documento .vigore { margin-top: 12px; font-size: 15px; color: var(--inchiostro-tenue); }
+
+/* In breve: le cose da sapere prima di leggere tutto */
+.in-breve { margin-top: 28px; padding: 22px 26px; border-radius: 22px; background: var(--superficie); }
+.in-breve ul { margin: 10px 0 0; padding-left: 20px; }
+
+.indice { margin-top: 28px; }
+.indice ol { margin: 10px 0 0; padding-left: 22px; columns: 2 16em; column-gap: 32px; }
+.indice li { break-inside: avoid; }
+
+.documento h2 { margin-top: 48px; font-size: 27px; color: var(--salvia); scroll-margin-top: 88px; }
+.documento h3 { margin-top: 28px; font-size: 19px; scroll-margin-top: 88px; }
+.documento p, .documento li { font-size: 17px; line-height: 1.6; }
+.documento p { margin-top: 12px; }
+.documento ul, .documento ol { margin: 12px 0 0; padding-left: 22px; }
+.documento li + li { margin-top: 6px; }
+.documento .nota { margin-top: 12px; font-size: 15px; color: var(--inchiostro-tenue); }
+
+/* Un trattamento: cosa, perché, su che base, per quanto. Schede e non una tabella: sul telefono
+   una tabella a quattro colonne non si legge. */
+.trattamento { margin-top: 18px; padding: 18px 22px; border-radius: 18px; border: 1.5px solid var(--filetto); }
+.trattamento h3 { margin-top: 0; }
+.trattamento dl { margin: 10px 0 0; display: grid; grid-template-columns: 9.5em 1fr; gap: 8px 16px; }
+.trattamento dt { font-size: 13px; font-weight: 700; letter-spacing: .08em; color: var(--salvia); padding-top: 3px; }
+.trattamento dd { margin: 0; font-size: 16px; line-height: 1.55; }
+@media (max-width: 560px) {
+  .trattamento dl { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .trattamento dd + dt { margin-top: 10px; }
+}
+
+/* Un dato del titolare che manca in legale/dati.json: deve saltare all'occhio */
+mark.da-completare { background: #f6d9c9; color: var(--inchiostro); padding: 0 4px; border-radius: 4px; font-weight: 700; }

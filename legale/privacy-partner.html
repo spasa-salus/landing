@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacy per i supermercati · NutriQuore</title>
+<meta name="description" content="Come NutriQuore tratta i dati di direttori e personale dei supermercati che usano il pannello del punto vendita e l'app Ordini.">
+<meta name="theme-color" content="#fffbf6">
+<meta name="color-scheme" content="light only">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="icon" href="/logo-q.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script type="module" src="/main.js"></script>
+<link rel="stylesheet" href="/comune.css">
+<link rel="stylesheet" href="/legale/legale.css">
+</head>
+<body>
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="/supermercati/" aria-label="NutriQuore per i supermercati">
+      <picture>
+        <source media="(max-width: 380px)" srcset="/logo-q.svg" width="34" height="34">
+        <img class="logotipo" src="/logo.svg" alt="" width="191" height="34">
+      </picture>
+    </a>
+    <nav aria-label="Principale">
+      <a class="voce" href="/">Per chi fa la spesa</a>
+      <a class="voce" href="/supermercati/">Per i supermercati</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenuto" class="documento">
+  <div class="contenitore">
+    <nav aria-label="Documenti legali">
+      <ul class="documenti">
+        <li><a href="/legale/privacy.html">Privacy</a></li>
+        <li><a href="/legale/cookie.html">Cookie</a></li>
+        <li><a href="/legale/termini.html">Termini</a></li>
+        <li><a href="/legale/note-legali.html">Note legali</a></li>
+        <li><a href="/legale/privacy-partner.html" aria-current="page">Privacy supermercati</a></li>
+        <li><a href="/legale/termini-partner.html">Condizioni supermercati</a></li>
+      </ul>
+    </nav>
+
+    <h1>Informativa privacy per i supermercati</h1>
+    <p class="vigore">Per direttori e personale che usano il pannello del punto vendita e l'app Ordini · In vigore dal {{versione}}</p>
+
+    <div class="in-breve">
+      <p class="etichetta">IN BREVE</p>
+      <ul>
+        <li>Trattiamo i dati che servono a farti entrare nel pannello e nell'app Ordini, a verificare il punto vendita e a fatturare.</li>
+        <li>Le password non le conosciamo: ne salviamo solo un'impronta cifrata. La chiave del gestionale è cifrata.</li>
+        <li>Degli ordini il punto vendita non riceve dati identificativi dei clienti: solo codice di ritiro, fascia oraria e prodotti.</li>
+        <li>Niente marketing, niente cessione dei dati a terzi.</li>
+      </ul>
+    </div>
+
+    <nav class="indice" aria-label="Indice">
+      <p class="etichetta">INDICE</p>
+      <ol>
+        <li><a href="#titolare">Chi tratta i dati</a></li>
+        <li><a href="#dati">Quali dati, perché e per quanto</a></li>
+        <li><a href="#clienti">I dati dei clienti</a></li>
+        <li><a href="#destinatari">Chi vede i dati</a></li>
+        <li><a href="#estero">Dati fuori dall'Unione europea</a></li>
+        <li><a href="#diritti">Diritti</a></li>
+        <li><a href="#modifiche">Modifiche</a></li>
+      </ol>
+    </nav>
+
+    <section id="titolare">
+      <h2>1. Chi tratta i dati</h2>
+      <p>Il titolare del trattamento è <strong>{{societa}}</strong>, con sede in {{sede}}, partita IVA {{piva}} («NutriQuore», «noi»). Per la privacy: <a href="mailto:[[emailPrivacy]]">{{emailPrivacy}}</a>; PEC {{pec}}.</p>
+      <p>Questa informativa riguarda le persone che usano NutriQuore per conto di un supermercato («Partner»): il <strong>direttore</strong>, che registra il punto vendita e lo gestisce dal pannello, e il <strong>personale</strong>, a cui il direttore crea un accesso per il pannello o per l'app Ordini. È il Partner a decidere chi del suo personale riceve un accesso: se sei un direttore, fai conoscere questa informativa alle persone a cui lo crei.</p>
+      <p>I dati delle imprese (ragione sociale, partita IVA, catalogo) non sono dati personali, salvo quando il Partner è una persona fisica o una ditta individuale: in quel caso valgono anche per loro le regole che seguono.</p>
+    </section>
+
+    <section id="dati">
+      <h2>2. Quali dati trattiamo, perché e per quanto</h2>
+
+      <div class="trattamento">
+        <h3>Account del direttore</h3>
+        <dl>
+          <dt>COSA</dt><dd>Email e password. Della password salviamo solo un'impronta (PBKDF2-SHA256 con sale): nemmeno noi possiamo leggerla.</dd>
+          <dt>PERCHÉ</dt><dd>Farti entrare nel pannello e gestire uno o più punti vendita.</dd>
+          <dt>BASE</dt><dd>Contratto con il Partner e misure precontrattuali (art. 6.1.b GDPR).</dd>
+          <dt>PER QUANTO</dt><dd>Finché il contratto è in corso. Per chiudere l'account scrivi a <a href="mailto:[[emailPrivacy]]">{{emailPrivacy}}</a>: lo cancelliamo, salvo i dati che la legge ci obbliga a conservare.</dd>
+        </dl>
+      </div>
+
+      <div class="trattamento">
+        <h3>Punto vendita e verifica</h3>
+        <dl>
+          <dt>COSA</dt><dd>Insegna e nome del punto vendita, ragione sociale, partita IVA, codice del punto vendita, posizione, orari di apertura, servizio di ritiro attivo o no, esito della verifica e motivo di un eventuale rifiuto, attivazione e motivo di una disattivazione.</dd>
+          <dt>PERCHÉ</dt><dd>Mostrare il punto vendita ai clienti che inquadrano il suo QR, ricevere ordini negli orari giusti e verificare, prima di renderlo visibile, che dietro ci sia un'impresa reale.</dd>
+          <dt>BASE</dt><dd>Contratto; legittimo interesse a evitare punti vendita falsi (art. 6.1.f).</dd>
+          <dt>PER QUANTO</dt><dd>Finché il punto vendita esiste. Un punto vendita senza ordini si elimina dal pannello, e con lui personale, ruoli, collegamento al gestionale e catalogo; uno con ordini nello storico si può solo disattivare, per non perdere la prova delle consegne. Alla chiusura del contratto lo cancelliamo noi su richiesta.</dd>
+        </dl>
+      </div>
+
+      <div class="trattamento">
+        <h3>Personale</h3>
+        <dl>
+          <dt>COSA</dt><dd>Nome utente, ruolo e permessi, password (solo l'impronta, come sopra), account attivo o sospeso, data di creazione.</dd>
+          <dt>PERCHÉ</dt><dd>Far entrare il personale nell'app Ordini e nel pannello con i soli permessi che il direttore gli assegna.</dd>
+          <dt>BASE</dt><dd>Contratto con il Partner; legittimo interesse del Partner e nostro a controllare chi accede.</dd>
+          <dt>PER QUANTO</dt><dd>Finché il direttore non elimina l'accesso o il punto vendita.</dd>
+        </dl>
+      </div>
+
+      <div class="trattamento">
+        <h3>Sessioni e tentativi di accesso</h3>
+        <dl>
+          <dt>COSA</dt><dd>Le sessioni aperte (salviamo solo l'impronta del codice di sessione) e gli accessi falliti, con l'email o il nome utente usato.</dd>
+          <dt>PERCHÉ</dt><dd>Tenerti collegato e bloccare chi prova a indovinare le password: dopo dieci tentativi falliti in quindici minuti l'accesso si ferma per un po'.</dd>
+          <dt>BASE</dt><dd>Legittimo interesse alla sicurezza.</dd>
+          <dt>PER QUANTO</dt><dd>Sessioni: 12 ore. Tentativi falliti: 24 ore.</dd>
+        </dl>
+      </div>
+
+      <div class="trattamento">
+        <h3>Collegamento al gestionale e catalogo</h3>
+        <dl>
+          <dt>COSA</dt><dd>Indirizzo del gestionale, chiave di accesso (conservata cifrata), stato ed errori del collegamento; il catalogo importato ogni notte (articoli, prezzi, lotti, scadenze, offerte) e gli abbinamenti fra gli articoli del Partner e i prodotti NutriQuore.</dd>
+          <dt>PERCHÉ</dt><dd>Comporre le liste dei clienti con gli articoli davvero disponibili. Per configurare il collegamento e abbinare gli articoli usiamo anche un sistema di intelligenza artificiale (OpenAI), a cui mandiamo un riassunto di cosa risponde il gestionale e i nomi degli articoli: mai la chiave di accesso.</dd>
+          <dt>BASE</dt><dd>Contratto.</dd>
+          <dt>PER QUANTO</dt><dd>L'ultimo catalogo importato, finché il punto vendita esiste; gli abbinamenti, finché servono.</dd>
+        </dl>
+      </div>
+
+      <div class="trattamento">
+        <h3>Ordini e mancati ritiri</h3>
+        <dl>
+          <dt>COSA</dt><dd>Per ogni ordine: codice di ritiro, fascia oraria, prodotti, stato, prodotti già raccolti, e l'eventuale segnalazione di mancato ritiro.</dd>
+          <dt>PERCHÉ</dt><dd>Preparare e consegnare la spesa ai clienti, e far scattare le regole sui mancati ritiri descritte nei <a href="/legale/termini.html#mancati">Termini per i clienti</a>.</dd>
+          <dt>BASE</dt><dd>Contratto.</dd>
+          <dt>PER QUANTO</dt><dd>Finché il punto vendita esiste, come storico delle consegne. Il legame dell'ordine con l'account del cliente si scioglie dopo 12 mesi, o subito se il cliente elimina l'account.</dd>
+        </dl>
+      </div>
+
+      <div class="trattamento">
+        <h3>Fatturazione e contratto</h3>
+        <dl>
+          <dt>COSA</dt><dd>Ragione sociale, sede, partita IVA e codice fiscale, codice destinatario o PEC per la fattura elettronica, l'offerta accettata, le fatture e i pagamenti.</dd>
+          <dt>PERCHÉ</dt><dd>Fatturare il servizio e adempiere agli obblighi fiscali e contabili.</dd>
+          <dt>BASE</dt><dd>Contratto; obbligo di legge (art. 6.1.c).</dd>
+          <dt>PER QUANTO</dt><dd>10 anni dalla chiusura dell'esercizio, come prevede la legge (art. 2220 del Codice civile).</dd>
+        </dl>
+      </div>
+
+      <div class="trattamento">
+        <h3>Comunicazioni sul servizio</h3>
+        <dl>
+          <dt>COSA</dt><dd>L'email del direttore e i messaggi che ci scambiamo.</dd>
+          <dt>PERCHÉ</dt><dd>Assistenza, avvisi su verifiche, interruzioni, modifiche alle condizioni e alle tariffe.</dd>
+          <dt>BASE</dt><dd>Contratto; legittimo interesse a gestire il rapporto.</dd>
+          <dt>PER QUANTO</dt><dd>Per la durata del rapporto e fino a 10 anni dopo, per difendere i nostri diritti.</dd>
+        </dl>
+      </div>
+      <p class="nota">Non usiamo questi dati per marketing né li cediamo a terzi. Il pannello salva nel browser solo la sessione e il tema scelto: vedi la <a href="/legale/cookie.html">cookie policy</a>.</p>
+    </section>
+
+    <section id="clienti">
+      <h2>3. I dati dei clienti</h2>
+      <p>I clienti che si collegano al punto vendita con il QR sono utenti di NutriQuore, e i loro dati li tratta NutriQuore secondo l'<a href="/legale/privacy.html">informativa per chi fa la spesa</a>. Il Partner non riceve il loro nome né la loro email: degli ordini vede solo codice di ritiro, fascia oraria e prodotti, e nel pannello trova numeri complessivi (clienti collegati, ordini, prodotti in scadenza salvati), mai persone singole. Per la vendita e la consegna in negozio il Partner è titolare autonomo dei dati che raccoglie in cassa.</p>
+    </section>
+
+    <section id="destinatari">
+      <h2>4. Chi vede i dati</h2>
+      <ul>
+        <li><strong>Il direttore</strong> vede i dati dei suoi punti vendita e del suo personale; il personale vede solo le sezioni per cui ha il permesso.</li>
+        <li><strong>Le persone dello staff di NutriQuore</strong> e la nutrizionista, autorizzate e tenute alla riservatezza, per verifica, assistenza e abbinamento degli articoli.</li>
+        <li><strong>I nostri fornitori</strong>, con un contratto che li obbliga a trattare i dati solo su nostra istruzione (art. 28 GDPR): Supabase, Inc. (database e funzioni del server; dati in {{regioneSupabase}}); OpenAI (configurazione del collegamento al gestionale e abbinamento degli articoli; OpenAI non usa questi dati per addestrare i modelli); Hetzner Online GmbH (server del sito e del pannello, Germania); Cloudflare, Inc. (DNS e protezione del traffico).</li>
+        <li><strong>Il nostro consulente fiscale</strong>, per la contabilità e le fatture.</li>
+        <li><strong>Le autorità</strong>, solo se la legge ce lo impone.</li>
+      </ul>
+    </section>
+
+    <section id="estero">
+      <h2>5. Dati fuori dall'Unione europea</h2>
+      <p>OpenAI e Cloudflare hanno sede negli Stati Uniti, e Supabase è una società statunitense. Quando i dati arrivano negli Stati Uniti, il trasferimento si basa sulla decisione di adeguatezza della Commissione europea per le società che aderiscono all'EU-U.S. Data Privacy Framework, o in alternativa sulle clausole contrattuali tipo approvate dalla Commissione (art. 45 e 46 GDPR).</p>
+    </section>
+
+    <section id="diritti">
+      <h2>6. Diritti</h2>
+      <p>Puoi chiederci di accedere ai tuoi dati, correggerli, cancellarli, limitarne il trattamento, riceverli in un formato leggibile da un computer e opporti ai trattamenti basati sul legittimo interesse (art. 15-21 GDPR), scrivendo a <a href="mailto:[[emailPrivacy]]">{{emailPrivacy}}</a>. Rispondiamo entro un mese. Alcuni dati non si possono cancellare finché la legge ci obbliga a conservarli, come le fatture.</p>
+      <p>Il personale può rivolgersi anche al proprio direttore, che può modificare o eliminare il suo accesso dal pannello.</p>
+      <p>Puoi presentare reclamo al Garante per la protezione dei dati personali (<a href="https://www.garanteprivacy.it">garanteprivacy.it</a>).</p>
+    </section>
+
+    <section id="modifiche">
+      <h2>7. Modifiche</h2>
+      <p>Se cambiamo questa informativa aggiorniamo la data in alto e, se il cambiamento è importante, lo comunichiamo per email al direttore.</p>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="contenitore">
+    <span>© NutriQuore</span>
+    <nav aria-label="Altre pagine e note legali">
+      <a href="/supermercati/">Per i supermercati</a>
+      <a href="/legale/termini-partner.html">Condizioni supermercati</a>
+      <a href="/legale/cookie.html">Cookie</a>
+      <a href="/legale/note-legali.html">Note legali</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

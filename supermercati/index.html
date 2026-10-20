@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NutriQuore per i supermercati · Clienti con la lista in mano</title>
+<meta name="description" content="NutriQuore porta i prodotti del tuo punto vendita nella lista della spesa di chi abita vicino. Catalogo dal gestionale, QR alle casse, ordini da preparare sul palmare: dal negozio di quartiere alla catena della GDO.">
+<meta name="theme-color" content="#3f4a35">
+<meta name="color-scheme" content="light only">
+<meta property="og:title" content="NutriQuore per i supermercati">
+<meta property="og:description" content="Clienti che arrivano con la lista in mano, composta con i prodotti del tuo punto vendita.">
+<meta property="og:image" content="/icona-512.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="icon" href="/logo-q.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script>
+  // Dove portano i bottoni: il pannello del punto vendita, per accedere e per registrarsi.
+  window.NQ = {
+    PANNELLO: 'https://b2b.nutriquore.it',
+  }
+</script>
+<script type="module" src="/main.js"></script>
+<link rel="stylesheet" href="/comune.css">
+<link rel="stylesheet" href="/supermercati/supermercati.css">
+</head>
+<body>
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="porta" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"/></symbol>
+</svg>
+
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="#" aria-label="NutriQuore per i supermercati, inizio pagina">
+      <picture>
+        <source media="(max-width: 380px)" srcset="/logo-q.svg" width="34" height="34">
+        <img class="logotipo" src="/logo.svg" alt="" width="191" height="34">
+      </picture>
+      <span class="area">SUPERMERCATI</span>
+    </a>
+    <nav aria-label="Principale">
+      <a class="voce" href="#come">Come si parte</a>
+      <a class="voce" href="#funzioni">Il pannello</a>
+      <a class="voce" href="/">Per chi fa la spesa</a>
+      <a class="bottone compatto" data-link="PANNELLO" href="#"><svg><use href="#porta"/></svg>Accedi</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenuto">
+  <div class="apertura scura">
+    <div class="contenitore">
+      <div class="testo">
+        <p class="occhiello">PER I SUPERMERCATI</p>
+        <h1>Clienti che arrivano con la lista in mano.</h1>
+        <p class="sotto">NutriQuore porta i prodotti del tuo punto vendita nella lista della spesa di chi abita vicino. Colleghi il gestionale, appendi un QR alle casse, il resto si aggiorna da solo.</p>
+        <div class="azioni">
+          <a class="bottone" data-link="PANNELLO" href="#">Registra il tuo punto vendita</a>
+          <a class="bottone secondario" data-link="PANNELLO" href="#"><svg><use href="#porta"/></svg>Accedi al pannello</a>
+        </div>
+        <p class="nota">Dal negozio di quartiere alla catena della GDO: un solo accesso per tutti i tuoi punti vendita.</p>
+      </div>
+
+      <div class="palmare-scena" data-scorri aria-hidden="true">
+        <div class="palmare">
+          <div class="laser"></div>
+          <div class="display">
+            <h3>Ordini di oggi</h3>
+            <div class="ordine"><span>Rossi<br><small>10:00–10:30</small></span><span class="stato pronto">pronto</span></div>
+            <div class="ordine"><span>Bianchi<br><small>11:00–11:30</small></span><span class="stato">in preparazione</span></div>
+            <div class="ordine"><span>Esposito<br><small>17:30–18:00</small></span><span class="stato">nuovo</span></div>
+          </div>
+          <div class="tasti"><span></span><span></span><span></span></div>
+        </div>
+        <p class="didascalia">L'app Ordini, sul palmare di reparto</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="come" id="come">
+    <div class="contenitore">
+      <div>
+        <h2 class="titolo-sezione">Dalla registrazione al primo ordine.</h2>
+        <p class="intro">Il pannello ti accompagna un passo alla volta e ti mostra quanto manca per completare la configurazione del punto vendita.</p>
+        <div class="serve">
+          <p class="etichetta">COSA TI SERVE</p>
+          <ul>
+            <li>Ragione sociale e partita IVA</li>
+            <li>Gli orari di apertura del punto vendita</li>
+            <li>L'indirizzo e la chiave del tuo gestionale, per il catalogo</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ombra-carta scontrino-rivela" data-rivela>
+        <div class="scontrino">
+          <div class="testa">COME SI PARTE</div>
+          <div class="puntini"></div>
+          <div class="passo rivela-i" style="--i:0"><span class="n">01</span><b>Registra il punto vendita</b><p>Email, ragione sociale e partita IVA. Verifichiamo i dati prima di renderti visibile ai clienti.</p></div>
+          <div class="passo rivela-i" style="--i:1"><span class="n">02</span><b>Collega il gestionale</b><p>Prodotti, prezzi e scadenze dei lotti arrivano da soli, ogni notte.</p></div>
+          <div class="passo rivela-i" style="--i:2"><span class="n">03</span><b>Appendi il QR</b><p>Lo stampi dal pannello e lo metti all'ingresso e alle casse. Chi lo inquadra fa la spesa da te.</p></div>
+          <div class="passo rivela-i" style="--i:3"><span class="n">04</span><b>Prepara gli ordini</b><p>Se attivi il ritiro della spesa già pronta, il personale riceve gli ordini sul palmare.</p></div>
+          <div class="rivela-i" style="--i:4">
+            <div class="totale"><span>CATALOGO</span><span>ogni notte</span></div>
+            <div class="codice-barre"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="funzioni-sezione" id="funzioni">
+    <div class="contenitore">
+      <h2 class="titolo-sezione">Tutto dal pannello del punto vendita.</h2>
+      <p class="intro">Il direttore gestisce catalogo, orari, personale e ordini da un solo posto, anche con più negozi.</p>
+      <ul class="funzioni" data-rivela>
+        <li class="rivela-i" style="--i:0"><span class="icona"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-5M9 8V2M15 8V2M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z"/></svg></span><b>Catalogo dal tuo gestionale</b><p>Prodotti, lotti e offerte si importano ogni notte. Quello che scade prima e quello in promozione salgono in lista.</p></li>
+        <li class="rivela-i" style="--i:1"><span class="icona"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"/></svg></span><b>Un QR per i tuoi clienti</b><p>Lo inquadrano con l'app o con la fotocamera dell'iPhone. Da lì la loro lista si compone con i tuoi prodotti, prezzi e offerte.</p></li>
+        <li class="rivela-i" style="--i:2"><span class="icona"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 6h4M9 14l2 2 4-4"/></svg></span><b>Ordini da preparare, sul palmare</b><p>Il personale riceve gli ordini nell'app Ordini, prepara la spesa e la consegna scansionando il codice del cliente.</p></li>
+        <li class="rivela-i" style="--i:3"><span class="icona"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><b>Personale con ruoli e permessi</b><p>Ogni addetto ha il suo accesso all'app Ordini. Decidi tu chi può fare cosa.</p></li>
+        <li class="rivela-i" style="--i:4"><span class="icona"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1.5-5h15L21 9"/><path d="M3 9h18a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0"/><path d="M5 12v9h14v-9M10 21v-5h4v5"/></svg></span><b>Più punti vendita, un solo accesso</b><p>Passi da un negozio all'altro dal pannello e ne aggiungi di nuovi quando vuoi.</p></li>
+        <li class="rivela-i" style="--i:5"><span class="icona"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></span><b>Numeri chiari</b><p>Clienti registrati, ordini e prodotti in scadenza salvati: oggi, negli ultimi 7 e 30 giorni.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="chiusura">
+    <div class="contenitore">
+      <h2 class="titolo-sezione">Porta il tuo punto vendita su NutriQuore.</h2>
+      <p class="intro">Per i tuoi clienti l'app è gratuita.</p>
+      <div class="azioni">
+        <a class="bottone" data-link="PANNELLO" href="#">Registra il tuo punto vendita</a>
+        <a class="bottone secondario" data-link="PANNELLO" href="#"><svg><use href="#porta"/></svg>Accedi al pannello</a>
+      </div>
+    </div>
+  </section>
+
+  <aside class="rimando" aria-label="Per chi fa la spesa">
+    <div class="contenitore">
+      <p>Fai la spesa?<span>Scarica NutriQuore: la lista si scrive da sola, con i prodotti del tuo supermercato.</span></p>
+      <a class="bottone secondario" href="/">Scopri l'app</a>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  <div class="contenitore">
+    <span>© NutriQuore</span>
+    <nav aria-label="Altre pagine e note legali">
+      <a href="/">Per chi fa la spesa</a>
+      <a href="/legale/privacy-partner.html">Privacy</a>
+      <a href="/legale/termini-partner.html">Condizioni</a>
+      <a href="/legale/cookie.html">Cookie</a>
+      <a href="/legale/note-legali.html">Note legali</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  ;(function () {
+    var NQ = window.NQ
+    document.querySelectorAll('[data-link]').forEach(function (a) {
+      var url = NQ[a.dataset.link]
+      if (!url) { a.hidden = true; return }
+      a.href = url
+    })
+  })()
+</script>
+</body>
+</html>

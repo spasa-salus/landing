@@ -1,6 +1,8 @@
 // Stesso carattere del pannello B2B e dell'app Android: Nunito, servito da qui e non da Google.
 // Sui dispositivi Apple vince SF Rounded (ui-rounded), come nell'app iOS.
 import '@fontsource-variable/nunito'
+// Il corsivo della firma del brand, solo per lo slogan.
+import '@fontsource/herr-von-muellerhoff'
 
 const quieto = matchMedia('(prefers-reduced-motion: reduce)').matches
 

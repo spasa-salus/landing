@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Note legali · NutriQuore</title>
+<meta name="description" content="Chi c'è dietro NutriQuore: dati societari, contatti, punto di contatto per le autorità, proprietà intellettuale e crediti.">
+<meta name="theme-color" content="#fffbf6">
+<meta name="color-scheme" content="light only">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="icon" href="/logo-q.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script type="module" src="/main.js"></script>
+<link rel="stylesheet" href="/comune.css">
+<link rel="stylesheet" href="/legale/legale.css">
+</head>
+<body>
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<header class="testata">
+  <div class="contenitore">
+    <a class="marchio" href="/" aria-label="NutriQuore, pagina principale">
+      <picture>
+        <source media="(max-width: 380px)" srcset="/logo-q.svg" width="34" height="34">
+        <img class="logotipo" src="/logo.svg" alt="" width="191" height="34">
+      </picture>
+    </a>
+    <nav aria-label="Principale">
+      <a class="voce" href="/">Per chi fa la spesa</a>
+      <a class="voce" href="/supermercati/">Per i supermercati</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenuto" class="documento">
+  <div class="contenitore">
+    <nav aria-label="Documenti legali">
+      <ul class="documenti">
+        <li><a href="/legale/privacy.html">Privacy</a></li>
+        <li><a href="/legale/cookie.html">Cookie</a></li>
+        <li><a href="/legale/termini.html">Termini</a></li>
+        <li><a href="/legale/note-legali.html" aria-current="page">Note legali</a></li>
+        <li><a href="/legale/privacy-partner.html">Privacy supermercati</a></li>
+        <li><a href="/legale/termini-partner.html">Condizioni supermercati</a></li>
+      </ul>
+    </nav>
+
+    <h1>Note legali</h1>
+    <p class="vigore">Aggiornate al {{versione}}</p>
+
+    <section id="titolare">
+      <h2>Chi gestisce NutriQuore</h2>
+      <div class="trattamento">
+        <dl>
+          <dt>SOCIETÀ</dt><dd>{{societa}}</dd>
+          <dt>SEDE LEGALE</dt><dd>{{sede}}</dd>
+          <dt>PARTITA IVA</dt><dd>{{piva}}</dd>
+          <dt>REGISTRO IMPRESE</dt><dd>{{rea}}</dd>
+          <dt>CAPITALE SOCIALE</dt><dd>{{capitale}}</dd>
+          <dt>PEC</dt><dd>{{pec}}</dd>
+          <dt>EMAIL</dt><dd><a href="mailto:[[emailInfo]]">{{emailInfo}}</a></dd>
+        </dl>
+      </div>
+      <p>Il sito nutriquore.it, l'app NutriQuore per iPhone e Android, il pannello del punto vendita e l'app Ordini sono servizi di {{societa}}.</p>
+    </section>
+
+    <section id="contatti">
+      <h2>Contatti</h2>
+      <ul>
+        <li>Domande sul servizio e per i supermercati: <a href="mailto:[[emailInfo]]">{{emailInfo}}</a></li>
+        <li>Privacy ed esercizio dei diritti: <a href="mailto:[[emailPrivacy]]">{{emailPrivacy}}</a></li>
+        <li>Segnalazioni di contenuti illegali: <a href="mailto:[[emailSegnalazioni]]">{{emailSegnalazioni}}</a></li>
+      </ul>
+    </section>
+
+    <section id="punto-di-contatto">
+      <h2>Punto di contatto per autorità e utenti</h2>
+      <p>Come prevede il regolamento europeo sui servizi digitali (Reg. UE 2022/2065, art. 11 e 12), il punto di contatto unico per le autorità degli Stati membri, la Commissione europea e gli utenti è l'indirizzo <a href="mailto:[[emailSegnalazioni]]">{{emailSegnalazioni}}</a>. Rispondiamo in italiano e in inglese.</p>
+    </section>
+
+    <section id="proprieta">
+      <h2>Proprietà intellettuale</h2>
+      <p>Il marchio NutriQuore, il logo, le ricette, i testi, la grafica, il catalogo e il software sono di {{societa}} o dei suoi licenzianti e sono protetti dalle leggi sul diritto d'autore e sui segni distintivi. I nomi e i marchi dei prodotti e dei supermercati che compaiono nell'app appartengono ai rispettivi titolari. Non è permesso copiare, riprodurre o riutilizzare i contenuti senza autorizzazione scritta.</p>
+      <p>Le foto e le descrizioni dei piatti della community appartengono a chi le ha pubblicate, che ce ne concede l'uso nell'app secondo i <a href="/legale/termini.html#community">Termini</a>.</p>
+    </section>
+
+    <section id="servizi">
+      <h2>Dove gira il servizio</h2>
+      <ul>
+        <li>Sito: Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen, Germania; server a Norimberga.</li>
+        <li>DNS e protezione del traffico: Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, Stati Uniti.</li>
+        <li>Database, autenticazione e archivio delle foto: Supabase, Inc.; dati in {{regioneSupabase}}.</li>
+      </ul>
+    </section>
+
+    <section id="crediti">
+      <h2>Crediti</h2>
+      <ul>
+        <li>Caratteri: Nunito, © 2014 The Nunito Project Authors; Herr Von Muellerhoff, © 2004 Alejandro Paul (Sudtipos). Entrambi con licenza SIL Open Font License 1.1.</li>
+        <li>Icone del sito e del pannello: Lucide, licenza ISC.</li>
+      </ul>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="contenitore">
+    <span>© NutriQuore</span>
+    <nav aria-label="Altre pagine e note legali">
+      <a href="/">Per chi fa la spesa</a>
+      <a href="/supermercati/">Per i supermercati</a>
+      <a href="/legale/privacy.html">Privacy</a>
+      <a href="/legale/cookie.html">Cookie</a>
+      <a href="/legale/termini.html">Termini</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
