@@ -86,7 +86,7 @@
 
 /* Il foglio di calendario dell'app: anelli sopra, mese terracotta, giorno grande */
 .calendarino { width: 96px; background: var(--carta); text-align: center; border-radius: 10px 10px 2px 2px; box-shadow: 0 8px 16px var(--ombra); }
-.calendarino .mese { position: relative; background: var(--marchio-terracotta); color: #fffbf6; font-weight: 800; font-size: 13px; padding: 6px 0 5px; border-radius: 10px 10px 0 0; }
+.calendarino .mese { position: relative; background: var(--terracotta); color: #fffbf6; font-weight: 800; font-size: 13px; padding: 6px 0 5px; border-radius: 10px 10px 0 0; }
 .calendarino .mese::before, .calendarino .mese::after {
   content: ''; position: absolute; top: -7px; width: 6px; height: 13px; border-radius: 3px; background: #6d665b;
 }

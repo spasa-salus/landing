@@ -8,6 +8,8 @@
 .scura { background: #3f4a35; color: #f3eadb; }
 .scura :focus-visible { outline-color: #f3eadb; }
 .scura a.bottone { --terracotta: #e48f7b; --su-pieno: #1b1916; }
+/* Il contorno sul salvia scuro: la terracotta chiara arriva a 3,8:1, questa a 5:1 */
+.scura a.bottone.secondario { color: #f0ae9f; border-color: #f0ae9f; }
 .apertura.scura { padding: 64px 0 72px; }
 .apertura.scura h1 { color: #f3eadb; }
 .apertura.scura .sotto { color: #d8d0c2; }

@@ -4,13 +4,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>NutriQuore per i supermercati · Clienti con la lista in mano</title>
-<meta name="description" content="NutriQuore porta i prodotti del tuo punto vendita nella lista della spesa di chi abita vicino. Catalogo dal gestionale, QR alle casse, ordini da preparare sul palmare: dal negozio di quartiere alla catena della GDO.">
+<meta name="description" content="NutriQuore porta i prodotti del tuo punto vendita nella lista della spesa di chi abita vicino: catalogo dal gestionale, QR alle casse, ordini sul palmare.">
+<meta name="robots" content="max-image-preview:large">
 <meta name="theme-color" content="#3f4a35">
 <meta name="color-scheme" content="light only">
+<!-- Anteprima nei social e nelle chat; canonical e og:url li scrive il plugin seo (vite.config.js). -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NutriQuore">
+<meta property="og:locale" content="it_IT">
 <meta property="og:title" content="NutriQuore per i supermercati">
 <meta property="og:description" content="Clienti che arrivano con la lista in mano, composta con i prodotti del tuo punto vendita.">
-<meta property="og:image" content="/icona-512.png">
-<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.nutriquore.it/condivisione-supermercati.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="NutriQuore per i supermercati: clienti che arrivano con la lista in mano.">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
 <link rel="icon" href="/logo-q.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -149,8 +157,9 @@
       </div>
 
       <div class="carta-modulo">
-        <!-- Senza JavaScript il modulo apre il programma di posta; con JavaScript lo manda contatti.js. -->
-        <form class="modulo" id="modulo-contatti" method="post" action="mailto:info@nutriquore.it" enctype="text/plain">
+        <!-- Lo manda contatti.js; senza JavaScript resta l'indirizzo qui accanto. Niente action="mailto:":
+             i browser lo segnalano come invio non sicuro. -->
+        <form class="modulo" id="modulo-contatti" method="post">
           <label class="campo">
             <span>La tua email</span>
             <input type="email" name="email" autocomplete="email" required maxlength="254" placeholder="nome@esempio.it">
