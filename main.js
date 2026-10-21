@@ -3,6 +3,8 @@
 import '@fontsource-variable/nunito'
 // Il corsivo della firma del brand, solo per lo slogan.
 import '@fontsource/herr-von-muellerhoff'
+// Il modulo «Vuoi saperne di più?», su tutte e due le pagine.
+import './contatti.js'
 
 const quieto = matchMedia('(prefers-reduced-motion: reduce)').matches
 

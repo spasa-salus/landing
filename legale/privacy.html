@@ -209,6 +209,17 @@
         </dl>
       </div>
       <p class="nota">Il sito non usa cookie di profilazione né strumenti di statistica: i dettagli sono nella <a href="/legale/cookie.html">cookie policy</a>.</p>
+
+      <div class="trattamento">
+        <h3 id="modulo-contatti">Modulo «Vuoi saperne di più?» del sito</h3>
+        <dl>
+          <dt>COSA</dt><dd>L'indirizzo email che ci lasci, se scrivi come privato o come azienda, l'oggetto, il messaggio e la data. Lo staff e la nutrizionista lo leggono nei loro pannelli, e ci arriva anche per email.</dd>
+          <dt>PERCHÉ</dt><dd>Risponderti. Non ti iscriviamo a newsletter e non usiamo l'indirizzo per altro.</dd>
+          <dt>BASE</dt><dd>Risposta a una tua richiesta, prima di un eventuale contratto (art. 6.1.b).</dd>
+          <dt>PER QUANTO</dt><dd>12 mesi dal messaggio; nella casella email, finché la conversazione serve a seguire la tua richiesta.</dd>
+        </dl>
+      </div>
+      <p class="nota">Nel messaggio scrivi solo quello che serve a risponderti: niente dati sulla tua salute.</p>
     </section>
 
     <section id="non-facciamo">
@@ -238,12 +249,13 @@
       <ul>
         <li><strong>Gli altri utenti dell'app</strong> vedono il tuo nome utente, l'immagine del profilo, i piatti visibili e i numeri di follower, persone seguite e piatti. Non vedono la tua email, chi segui, cosa hai segnalato o chi hai bloccato. Le foto dei piatti e del profilo stanno in un archivio a cui si accede con il link diretto alla foto.</li>
         <li><strong>Il supermercato a cui sei collegato</strong> vede gli ordini che gli mandi: codice di ritiro, fascia oraria, prodotti e quantità. Non vede il tuo nome né la tua email. Nel suo pannello trova solo numeri complessivi: quante persone sono collegate, quanti ordini, quanti prodotti in scadenza sono stati salvati. Per la vendita e il ritiro in negozio il supermercato è un titolare autonomo del trattamento.</li>
-        <li><strong>La nutrizionista</strong>, {{nutrizionista}}, vede le domande e i piatti della community insieme al nome utente e all'email di chi li ha scritti, e può moderare i piatti. Tratta i dati per nostro conto, come responsabile del trattamento (art. 28 GDPR).</li>
+        <li><strong>La nutrizionista</strong>, {{nutrizionista}}, vede le domande e i piatti della community insieme al nome utente e all'email di chi li ha scritti, e può moderare i piatti; legge anche i messaggi del modulo di contatto del sito. Tratta i dati per nostro conto, come responsabile del trattamento (art. 28 GDPR).</li>
         <li><strong>Le persone dello staff di NutriQuore</strong> autorizzate e tenute alla riservatezza, solo per quello che serve al loro lavoro: assistenza, moderazione, sicurezza.</li>
         <li><strong>I nostri fornitori</strong>, che trattano i dati per nostro conto con un contratto che li obbliga a farlo solo su nostra istruzione (art. 28 GDPR):
           <ul>
             <li>Supabase, Inc.: database, autenticazione e invio delle email con il codice di accesso, archivio delle foto, funzioni del server. I dati stanno in {{regioneSupabase}}.</li>
             <li>OpenAI: moderazione delle foto e delle descrizioni dei piatti. OpenAI non usa per l'addestramento i dati che riceve dalle sue API e li conserva al massimo 30 giorni per controlli contro gli abusi; i file che le inviamo in blocco li cancelliamo appena letto il risultato.</li>
+            <li>Resend: l'invio alla nostra casella dei messaggi del modulo di contatto del sito.</li>
             <li>Hetzner Online GmbH: il server del sito, a Norimberga (Germania).</li>
             <li>Cloudflare, Inc.: il DNS e la protezione del traffico del sito.</li>
           </ul>
@@ -255,7 +267,7 @@
 
     <section id="estero">
       <h2>6. Dati fuori dall'Unione europea</h2>
-      <p>OpenAI e Cloudflare hanno sede negli Stati Uniti, e Supabase è una società statunitense anche quando i dati stanno in Europa. Quando i dati arrivano negli Stati Uniti, il trasferimento si basa sulla decisione di adeguatezza della Commissione europea per le società che aderiscono all'EU-U.S. Data Privacy Framework, o in alternativa sulle clausole contrattuali tipo approvate dalla Commissione (art. 45 e 46 GDPR). Puoi chiederci una copia delle garanzie scrivendo a <a href="mailto:[[emailPrivacy]]">{{emailPrivacy}}</a>.</p>
+      <p>OpenAI, Cloudflare e Resend hanno sede negli Stati Uniti, e Supabase è una società statunitense anche quando i dati stanno in Europa. Quando i dati arrivano negli Stati Uniti, il trasferimento si basa sulla decisione di adeguatezza della Commissione europea per le società che aderiscono all'EU-U.S. Data Privacy Framework, o in alternativa sulle clausole contrattuali tipo approvate dalla Commissione (art. 45 e 46 GDPR). Puoi chiederci una copia delle garanzie scrivendo a <a href="mailto:[[emailPrivacy]]">{{emailPrivacy}}</a>.</p>
     </section>
 
     <section id="diritti">

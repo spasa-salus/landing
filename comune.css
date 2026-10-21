@@ -12,6 +12,7 @@
   --filetto: #d9c3a8;
   --bordo: #8f8474;
   --marchio-terracotta: #c76a58;
+  --pomodoro: #a82a3a;
   --su-pieno: #fffbf6;
   --ombra: rgba(46, 42, 36, 0.16);
   /* I caratteri dell'app: SF Rounded su Apple, Nunito (lo stesso dell'app Android e del
@@ -177,6 +178,54 @@ footer a { color: inherit; }
 }
 .rimando p { font-size: 17px; font-weight: 700; }
 .rimando p span { display: block; font-weight: 400; color: var(--inchiostro-tenue); font-size: 16px; }
+
+/* ---------- Vuoi saperne di più? Il modulo di contatto (contatti.js) ---------- */
+/* Fondo crema, il modulo su una carta chiara; i campi a pastiglia crema col bordo dei campi
+   dell'app, la scelta privato/azienda come il Segmentato dell'app (salvia = scelto). */
+.contatti { background: var(--superficie); }
+.contatti .contenitore { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 56px; align-items: start; }
+.contatti .diretto { margin-top: 20px; font-size: 17px; color: var(--inchiostro-tenue); }
+.contatti .diretto a { font-weight: 700; }
+.contatti + .rimando { padding-top: 56px; }
+.carta-modulo { padding: 32px; border-radius: 28px; background: var(--sfondo); box-shadow: 0 10px 30px var(--ombra); }
+.modulo { display: grid; gap: 18px; }
+.modulo .campo { display: grid; gap: 6px; min-width: 0; margin: 0; padding: 0; border: 0; }
+.modulo .campo > span, .modulo legend { padding: 0; font-size: 15px; font-weight: 700; }
+.modulo legend { margin-bottom: 6px; }
+.modulo input[type='email'], .modulo input[type='text'], .modulo textarea {
+  width: 100%; padding: 12px 16px;
+  border: 1.5px solid var(--bordo); border-radius: 16px;
+  background: var(--superficie); color: var(--inchiostro);
+  font: inherit; font-size: 17px;
+}
+.modulo textarea { min-height: 150px; resize: vertical; line-height: 1.45; }
+.modulo input::placeholder { color: var(--inchiostro-tenue); opacity: .7; }
+.modulo :is(input, textarea):user-invalid { border-color: var(--pomodoro); }
+.segmentato { display: inline-grid; grid-auto-flow: column; grid-auto-columns: 1fr; padding: 4px; border-radius: 999px; background: var(--superficie); }
+.segmentato label { position: relative; }
+.segmentato input { position: absolute; inset: 0; margin: 0; opacity: 0; cursor: pointer; }
+.segmentato span { display: block; padding: 9px 24px; border-radius: 999px; text-align: center; font-weight: 700; font-size: 16px; color: var(--inchiostro-tenue); }
+.segmentato input:checked + span { background: var(--salvia); color: var(--su-pieno); }
+.segmentato input:focus-visible + span { outline: 3px solid var(--salvia); outline-offset: 2px; }
+/* Il campo trappola per i programmi che riempiono i moduli: fuori dallo schermo, non per le persone */
+.trappola { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.nota-modulo { font-size: 15px; color: var(--inchiostro-tenue); }
+.invio { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; }
+.invio .bottone { cursor: pointer; font-family: inherit; }
+.invio .bottone:disabled { opacity: .6; cursor: progress; }
+.esito { font-size: 15px; color: var(--inchiostro-tenue); }
+.esito.errore { color: var(--pomodoro); font-weight: 700; }
+/* Dopo l'invio, al posto del modulo: lo scontrino del messaggio */
+.grazie { display: grid; gap: 18px; justify-items: start; outline: none; }
+.grazie .ombra-carta { width: min(380px, 100%); }
+.grazie .scontrino { font-size: 14px; }
+.grazie .riga { padding: 2px 0; }
+.grazie .riga span:last-child { min-width: 0; text-align: right; overflow-wrap: anywhere; }
+.grazie .bottone { cursor: pointer; font-family: inherit; }
+@media (max-width: 860px) {
+  .contatti .contenitore { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .carta-modulo { padding: 24px 20px; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

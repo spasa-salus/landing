@@ -20,6 +20,8 @@
   window.NQ = {
     APP_STORE: '',
     GOOGLE_PLAY: 'https://play.google.com/store/apps/details?id=it.nutriquore.app',
+    // Il modulo «Vuoi saperne di più?»: la funzione che lo salva e lo inoltra a info@ (contatti.js).
+    CONTATTI: 'https://xbwkcdnlatpwqmiodrrb.supabase.co/functions/v1/contatti',
   }
   // Il dispositivo si decide prima del primo disegno, così il bottone giusto c'è da subito.
   // iPadOS si presenta come Mac: lo tradisce il touch.
@@ -53,6 +55,7 @@
     <nav aria-label="Principale">
       <a class="voce" href="#come">Come funziona</a>
       <a class="voce" href="#ricette">Ricette</a>
+      <a class="voce" href="#contatti">Contatti</a>
       <a class="voce" href="/supermercati/">Per i supermercati</a>
       <a class="bottone compatto solo-ios" data-link="APP_STORE" href="#scarica"><svg><use href="#apple"/></svg>Scarica</a>
       <a class="bottone compatto solo-android" data-link="GOOGLE_PLAY" href="#scarica"><svg><use href="#play"/></svg>Scarica</a>
@@ -171,6 +174,64 @@
         <a class="bottone store solo-ios anche-desktop" data-link="APP_STORE" href="#"><svg><use href="#apple"/></svg><span><small>Scarica su</small>App Store</span></a>
         <a class="bottone store solo-android anche-desktop" data-link="GOOGLE_PLAY" href="#"><svg><use href="#play"/></svg><span><small>Disponibile su</small>Google Play</span></a>
         <p class="presto">Su App Store a breve.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contatti" id="contatti">
+    <div class="contenitore">
+      <div>
+        <h2 class="titolo-sezione">Vuoi saperne di più?</h2>
+        <p class="intro">Scrivici quello che vuoi sapere: ti risponde una persona del team NutriQuore, all'indirizzo che ci lasci.</p>
+        <p class="diretto">Preferisci la tua posta? Scrivi a <a href="mailto:info@nutriquore.it">info@nutriquore.it</a>.</p>
+      </div>
+
+      <div class="carta-modulo">
+        <!-- Senza JavaScript il modulo apre il programma di posta; con JavaScript lo manda contatti.js. -->
+        <form class="modulo" id="modulo-contatti" method="post" action="mailto:info@nutriquore.it" enctype="text/plain">
+          <label class="campo">
+            <span>La tua email</span>
+            <input type="email" name="email" autocomplete="email" required maxlength="254" placeholder="nome@esempio.it">
+          </label>
+          <fieldset class="campo">
+            <legend>Scrivi come</legend>
+            <div class="segmentato">
+              <label><input type="radio" name="tipo" value="privato" checked><span>Privato</span></label>
+              <label><input type="radio" name="tipo" value="azienda"><span>Azienda</span></label>
+            </div>
+          </fieldset>
+          <label class="campo">
+            <span>Oggetto</span>
+            <input type="text" name="oggetto" required minlength="3" maxlength="150">
+          </label>
+          <label class="campo">
+            <span>Messaggio</span>
+            <textarea name="messaggio" required minlength="10" maxlength="5000" rows="6"></textarea>
+          </label>
+          <div class="trappola" aria-hidden="true">
+            <label>Lascia vuoto questo campo <input type="text" name="sito" tabindex="-1" autocomplete="off"></label>
+          </div>
+          <p class="nota-modulo">Usiamo il tuo indirizzo solo per risponderti: i dettagli sono nell'<a href="/legale/privacy.html#modulo-contatti">informativa privacy</a>.</p>
+          <div class="invio">
+            <button class="bottone" type="submit">Invia il messaggio</button>
+            <p class="esito" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+
+        <div class="grazie" id="contatti-grazie" tabindex="-1" hidden>
+          <div class="ombra-carta">
+            <div class="scontrino">
+              <div class="testa">MESSAGGIO INVIATO</div>
+              <div class="puntini"></div>
+              <div class="riga"><span>DA</span><span data-campo="email"></span></div>
+              <div class="riga"><span>COME</span><span data-campo="tipo"></span></div>
+              <div class="riga"><span>OGGETTO</span><span data-campo="oggetto"></span></div>
+              <div class="totale"><span>RISPOSTA</span><span>in arrivo</span></div>
+            </div>
+          </div>
+          <p>Grazie! Ti rispondiamo a questo indirizzo: se non ci trovi, guarda anche nella posta indesiderata.</p>
+          <button class="bottone secondario" type="button" data-altro>Scrivi un altro messaggio</button>
+        </div>
       </div>
     </div>
   </section>
