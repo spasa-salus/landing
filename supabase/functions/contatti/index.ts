@@ -1,5 +1,5 @@
 // Edge Function del modulo «Vuoi saperne di più?» della landing (/ e /supermercati/).
-// Pubblica: chi scrive dal sito non ha un account. Salva il messaggio in privato.contatto, dove lo
+// Pubblica: chi scrive dal sito non ha un account. Salva il messaggio, cifrato, in privato.contatto, dove lo
 // leggono i pannelli admin e nutrizionista (sezione Messaggi, dalla funzione `admin`), e lo
 // inoltra per email a info@nutriquore.it con Resend. Prima si salva, poi si manda: se l'email non
 // parte, il messaggio resta nei pannelli col motivo.
@@ -55,7 +55,7 @@ class Errore extends Error {
 
 async function controllaTetti(email: string) {
   const [{ suo, tutti }] = await sql`
-    select count(*) filter (where lower(email) = lower(${email}) and creato_il > now() - interval '1 day')::int as suo,
+    select count(*) filter (where email_impronta = privato.impronta(${email}) and creato_il > now() - interval '1 day')::int as suo,
            count(*) filter (where creato_il > now() - interval '1 hour')::int as tutti
     from privato.contatto
     where creato_il > now() - interval '1 day'`
@@ -104,8 +104,9 @@ Deno.serve(async (req) => {
     await controllaTetti(m.email)
 
     const [riga] = await sql`
-      insert into privato.contatto (email, tipo, oggetto, messaggio)
-      values (${m.email}, ${m.tipo}, ${m.oggetto}, ${m.messaggio})
+      insert into privato.contatto (tipo, dati, email_impronta)
+      values (${m.tipo}, privato.cifra(${sql.json({ email: m.email, oggetto: m.oggetto, messaggio: m.messaggio })}::jsonb),
+              privato.impronta(${m.email}))
       returning id, creato_il`
     const errore = await inoltra(m, riga.id, new Date(riga.creato_il))
     await sql`update privato.contatto set inoltrato = ${errore === null}, errore_inoltro = ${errore} where id = ${riga.id}`
